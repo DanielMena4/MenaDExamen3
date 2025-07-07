@@ -1,10 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MenaDExamen3.MainPage">
+             xmlns:local="clr-namespace:MenaDExamen3"
+             x:Class="MenaDExamen3.MainPage"
+             Title="Daniel Mena 15/05/2004"
+             >
+    <ContentPage.BindingContext>
+        <local:MainPageViewModel />
+    </ContentPage.BindingContext>
     <ScrollView>
         <VerticalStackLayout>
-            <Entry x:Name="NameEntry" Placeholder="Nombre del dispositivo"/>
+            <Entry Text="{Binding Nombre}" Placeholder="Nombre del dispositivo"/>
             <Entry x:Name="BrandEntry" Placeholder="Marca del dispositivo"/>
             <CheckBox x:Name="GarantiaEntry" />
             <Entry x:Name="VidautilEntry" Placeholder="Vida util del dipositivo(Meses)"/>

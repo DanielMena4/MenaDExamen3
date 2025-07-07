@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net.Mime;
 using System.Text;
@@ -9,10 +10,13 @@ using MenaDExamen3.Repositories;
 
 namespace MenaDExamen3
 {
-    class MainPageViewModel : BindableObject
+    class MainPageViewModel : INotifyPropertyChanged
     {
         private readonly DatabaseRepository _databaseRepository;
         private List<Dispositivo> _dispositivos;
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+
         public List<Dispositivo> Dispositivos
         {
             get => _dispositivos;
@@ -22,6 +26,12 @@ namespace MenaDExamen3
                 OnPropertyChanged();
             }
         }
+
+        private void OnPropertyChanged()
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Dispositivos)));
+        }
+
         public MainPageViewModel()
         {
             string dbPath = DatabaseHelper.GetDatabasePath("Dispositivos.db");
