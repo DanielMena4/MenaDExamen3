@@ -17,13 +17,14 @@
                             <StackLayout>
                                 <Label Text="{Binding Nombre}" FontSize="18" />
                                 <Label Text="{Binding Marca}" FontSize="16" />
-                                <CheckBox IsChecked="{Binding GarantiaActiva}" />
-                                <Label Text="{Binding GarantiaActiva, Converter={StaticResource BoolToStringConverter}}" FontSize="14" />
+                                <Label Text="{Binding VidaUtilMeses, StringFormat='Vida Útil: {0} meses'}" FontSize="14" />
+                                <Label Text="Garantia" />
+                                <CheckBox IsChecked="{Binding VidaUtilMeses}" />
                             </StackLayout>
                         </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </VerticalStackLayout>
-    </ScrollView>
+        </ScrollView>
 </ContentPage>

@@ -14,6 +14,10 @@ namespace MenaDExamen3
         private readonly DatabaseRepository _databaseRepository;
         public event PropertyChangedEventHandler? PropertyChanged;
         private List<Dispositivo> _dispositivos;
+        public string Nombre;
+        public string Marca;
+        public bool GarantiaActiva;
+        public int VidaUtilMeses;
         private void OnPropertyChanged()
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Dispositivos)));
