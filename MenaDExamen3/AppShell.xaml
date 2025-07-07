@@ -7,9 +7,18 @@
     Shell.FlyoutBehavior="Disabled"
     Title="MenaDExamen3">
 
-    <ShellContent
+    <TabBar>
+        <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+        <Tab Title="Listado">
+            <ShellContent ContentTemplate="{DataTemplate local:ListadoPage}" />
+        </Tab>
+        <Tab Title="Registro">
+            <ShellContent ContentTemplate="{DataTemplate local:RegistroPage}" />
+        </Tab>
+    </TabBar>
+
 
 </Shell>
