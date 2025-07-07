@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using MenaDExamen3.Models;
 using MenaDExamen3.Repositories;
 
@@ -14,6 +15,10 @@ namespace MenaDExamen3
     {
         private readonly DatabaseRepository _databaseRepository;
         private List<Dispositivo> _dispositivos;
+        public string Nombre;
+        public string Marca;
+        public bool GarantiaActiva;
+        public int VidaUtilMeses;
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -42,8 +47,15 @@ namespace MenaDExamen3
         {
             Dispositivos = _databaseRepository.GetAllDispositivos();
         }
-        public void AddDispositivo(Dispositivo dispositivo)
+        public void AddDispositivo()
         {
+            var dispositivo = new Dispositivo
+            {
+                NombreDispositivo = Nombre,
+                MarcaDispositivo = Marca,
+                GarantiaActiva = GarantiaActiva,
+                VidaUtilMeses = VidaUtilMeses
+            };
             try 
             {
                 if (dispositivo.VidaUtilMeses < 12 && dispositivo.GarantiaActiva)

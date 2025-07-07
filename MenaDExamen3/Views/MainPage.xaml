@@ -11,10 +11,11 @@
     <ScrollView>
         <VerticalStackLayout>
             <Entry Text="{Binding Nombre}" Placeholder="Nombre del dispositivo"/>
-            <Entry x:Name="BrandEntry" Placeholder="Marca del dispositivo"/>
-            <CheckBox x:Name="GarantiaEntry" />
-            <Entry x:Name="VidautilEntry" Placeholder="Vida util del dipositivo(Meses)"/>
-            <Button Text="Agregar Dispositivo" Clicked="Button_Clicked"></Button>
+            <Entry Text="{Binding Marca}" Placeholder="Marca del dispositivo"/>
+            <Label Text="Garantia Activa" />
+            <CheckBox IsChecked="{Binding GarantiaActiva}" />
+            <Entry Text="{Binding VidaUtilMeses}" Placeholder="Vida util del dipositivo(Meses)"/>
+            <Button Text="Agregar Dispositivo" Clicked="Button_Clicked_1"></Button>
         </VerticalStackLayout>
     </ScrollView>
 

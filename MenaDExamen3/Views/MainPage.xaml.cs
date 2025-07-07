@@ -2,15 +2,16 @@
 {
     public partial class MainPage : ContentPage
     {
+        MainPageViewModel viewModel = new MainPageViewModel();
         public MainPage()
         {
             InitializeComponent();
-            BindingContext = new MainPageViewModel();
+            BindingContext = viewModel;
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private void Button_Clicked_1(object sender, EventArgs e)
         {
-
+            viewModel.AddDispositivo();
         }
     }
 
